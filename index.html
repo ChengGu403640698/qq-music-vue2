@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://y.gtimg.cn/music/h5/client/jsbridge.js?max_age=2592000"></script>
+</head>
+<body>
+    <script>
+        function initShare(data, callback) {
+	M.client.invoke("ui", "setActionBtn", {
+		type: "icon",
+		content: "share"
+	}, function () {
+		M.client.invoke("other", "callShareWeb", data, callback);
+	})
+}
+
+initShare({
+	imgUrl: "https://y.gtimg.cn/music/common/upload/t_cm3_photo_publish/11.png?r=1508325520779",
+	link: location.href,
+	title: "分享标题",
+	desc: "分享简介"
+})
+    </script>
+    
+</body>
+</html>
